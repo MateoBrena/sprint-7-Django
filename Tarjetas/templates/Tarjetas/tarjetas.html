@@ -1,0 +1,28 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'Inicio/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Tarjetas {% endblock %}
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+<section>
+    <h3> Listado de Tarjetas </h1>
+    <div>
+        {% for tarjeta in tarjetas %}
+            <div>
+                <p> {{ tarjeta.numero}}</p>
+                <p> {{ tarjeta.tipo}} </p>
+                <p> {{ tarjeta.marca }} </p>
+                <p> {{ tarjeta.fecha_expiracion }} </p>
+                <p> {{ tarjeta.cliente }} </p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

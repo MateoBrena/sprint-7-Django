@@ -1,0 +1,39 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'Inicio/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Prestamo {% endblock %}
+
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+
+<section>
+  <nav class="menu-navbar">
+    <ul>
+        <li><a href="{% url 'cliente_detail' cliente.id %}"> Mi Perfil </a></li>
+        <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
+        <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
+        <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
+    </ul>
+</nav>
+    <h3 class="texto">Préstamo preaprobado</h3>
+    <div class="container" id="prestamos"> 
+        <div>
+          <!-- Formulario de contacto-->
+         <form action="" method="POST">
+          {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-success btn-block" type="submit" value="Solicitar Prestamo">
+            </form>
+        <!--{{request.POST}}-->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+* {
+    font-style: sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    background: linear-gradient(darkblue, blue);
+    color: whitesmoke;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-dark {
+    margin: 10px;
+}
+
+.menu-desplegado {
+    display: none;
+    max-width: 250px;
+    height: 100%;
+}
+
+.menu-desplegado a {
+    color: #4D63B9;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.logo {
+    width: 120px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+footer {
+    background: linear-gradient(darkblue, blue);
+    color: whitesmoke;
+    margin-top: 2rem;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.contenedor-tarjetas-index {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tarjetas-index {
+    margin: 1rem;
+    flex-basis: 300px;
+}
+
+.valores {
+    display: flex;
+    flex-direction: column;
+}
+
+.mision {
+    color: whitesmoke;
+    background-color: #4D63B9;
+}
+
+.vision {
+    background-color: lightgray;
+}
+
+.titulo-section {
+    margin: 1rem;
+}
+
+#contenedor-cuentas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cada-cuenta {
+    width: 80%;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.texto {
+    margin-left: 1rem;
+}
+
+.menu-navbar {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.menu-navbar ul li {
+    list-style: none;
+}
+
+.menu-navbar ul li a{
+    color: black;
+}
+
+#link {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#prestamos {
+    margin-top: 3rem;
+}
+
+#candado {
+    margin: auto;
+    margin-top: 3rem;
+}
+
+#detalle {
+    border: solid 1px black;
+    width: 80%;
+    margin-left: 3rem;
+}
+
+@media (min-width: 768px) {
+
+    .valores {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 995px) {
+    .tarjetas-index {
+        flex-basis: 20%;
+    }
+
+}

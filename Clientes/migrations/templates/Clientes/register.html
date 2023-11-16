@@ -1,0 +1,63 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'Inicio/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Prestamo {% endblock %}
+
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+<section>
+    <h3>Registrar usuario</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-field" >
+            {{  form.username.errors }}
+            <label for="username"> Nombre de usuario </label>
+            {{  form.username }}
+        </div>
+        <div class="form-field" >
+            <label for="name"> Nombre </label>
+            {{ cliente_form.name }}
+        </div>
+        <div class="form-field" >
+            <label for="surname"> Apellido </label>
+            {{ cliente_form.surname }}
+        </div>
+        <div>
+            <label for="dni"> DNI </label>
+            {{ cliente_form.dni }}
+        </div>
+        <div class="form-field" >
+            <label for="dob"> Fecha de nacimiento </label>
+            {{ cliente_form.dob }}
+        </div>
+        <div class="form-field" >
+            <label for="branch"> Sucursal </label>
+            {{ cliente_form.branch }}
+        </div>
+        <div class="form-field" >
+            <label for="tipo"> Tipo de cliente </label>
+            {{ cliente_form.tipo }}
+        </div>
+        <div class="form-field" >
+            {{  form.password1.errors }}
+            <label for="password1"> Contraseña </label>
+            {{  form.password1 }}
+        </div>
+        <div class="form-field" >
+            {{  form.password2.errors }}
+            <label for="password1"> Confirmar contraseña </label>
+            {{  form.password2 }}
+        </div>
+        <input class="btn btn-success btn-block" type="submit" value="Crear Usuario">
+        <br>
+        {{ form.non_field_errors }}
+    </form>
+</section>
+{% endblock %}

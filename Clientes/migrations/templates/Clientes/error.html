@@ -1,0 +1,28 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'Inicio/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Error {% endblock %}
+
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+
+<section>
+    <div class="container bg-alert">
+        <h1> Ups! Algo salió mal! </h1> 
+    </div>
+    <div>
+        <h3 class="texto">Error: El usuario está intentando acceder a información confidencial </h3>
+    </div>
+    <div id="candado">
+        <img src="{% static 'Inicio/img/candado.png' %}" alt="Señal de alto">
+    </div>
+</section>
+
+{% endblock %}

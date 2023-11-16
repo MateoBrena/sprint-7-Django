@@ -1,0 +1,27 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'Inicio/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Sucursales {% endblock %}
+
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+
+<section class="container m-3">
+    <h3> Listado de nuestras sucursales </h1>
+    <div>
+        {% for sucursal in sucursales %}
+            <div class="container m-2">
+                <p> {{ sucursal }} </p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

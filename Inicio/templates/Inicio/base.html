@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock %} | ITBANK </title>
+
+    <!-- Estilos y fuentes del template  -->
+    
+    {% load static %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link href="{% static 'Inicio/css/style.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+              <img src="{% static 'Inicio/img/logo-itbank.png' %}" alt="Logo del banco">
+            </a>
+        </div>
+        <div class="dropdown" id="home-banking">
+            <button type="button" class="btn btn-dark" data-bs-toggle="dropdown">Menu</button>
+            <ul class="dropdown-menu boton-index">
+              {% if not request.user.is_authenticated %}
+                <li class="boton-index"><a href="{% url 'login' %}" class="dropdown-item boton-index">Home Banking</a></li>
+                <li class="boton-index"><a href="{% url 'register' %}" class="dropdown-item boton-index">Registrate</a></li>
+              {% else %}
+              <li class="boton-index"><a href="#" class="dropdown-item boton-index">Bienvenido {{ request.user }}</a></li>
+              <li class="boton-index"><a href="{% url 'logout' %}" class="dropdown-item boton-index">Cerrar Sesión</a></li>
+              {% endif %}
+            </ul>
+        </div>
+    </header>
+
+    <!-- Contenido -->
+        {% block content %}{% endblock %}
+
+    <!-- Pié de página -->
+    <footer>
+        <p>Términos de uso</p>
+        <p>Políticas de privacidad</p>
+        <p>Contacto</p>
+        <p><a id="link" href="{% url 'sucursales' %}">Sucursales</a></p>
+    </footer>
+
+  </body>
+</html>

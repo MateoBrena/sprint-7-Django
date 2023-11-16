@@ -1,0 +1,28 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'Inicio/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Clientes {% endblock %}
+
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+
+<section>
+    <h3 class="texto"> Listado de clientes <i class="fa fa-bars"></i></h1>
+    <div>
+        {% for cliente in clientes %}
+            <div class="container">
+                <a href="{% url 'cliente_detail' cliente.id %}"> {{ cliente }} </a>
+                <p> {{cliente.tipo}} </p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
