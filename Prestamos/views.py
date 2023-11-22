@@ -35,14 +35,20 @@ def prestamo(request, cliente_id):
                 if cliente.tipo_id == 1 and int(montoRecibido) <= 100000:
                     prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, cliente_id = cliente.id)
                     prestamo.save()
+                    cuenta.balance = cuenta.balance + int(montoRecibido)
+                    cuenta.save()
                     messages.success(request, 'Préstamo otorgado, verificar en "Mis préstamos", el saldo en su cuenta '+ cuenta.iban +' ha sido actualizado')
                 elif cliente.tipo_id == 2 and int(montoRecibido) <= 300000:
                     prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, cliente_id = cliente.id)
                     prestamo.save()
+                    cuenta.balance = cuenta.balance + int(montoRecibido)
+                    cuenta.save()
                     messages.success(request, 'Préstamo otorgado, verificar en "Mis préstamos", el saldo en su cuenta '+ cuenta.iban +' ha sido actualizado')
                 elif cliente.tipo_id == 3 and int(montoRecibido) <= 500000:
                     prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, cliente_id = cliente.id)
                     prestamo.save()
+                    cuenta.balance = cuenta.balance + int(montoRecibido)
+                    cuenta.save()
                     messages.success(request, 'Préstamo otorgado, verificar en "Mis préstamos", el saldo en su cuenta '+ cuenta.iban +' ha sido actualizado')
                 else:
                      messages.error(request, "Error: Préstamo rechazado. Monto máximo de cliente "+ str(cliente.tipo) + " superado")
