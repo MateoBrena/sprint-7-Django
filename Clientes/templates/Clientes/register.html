@@ -7,14 +7,14 @@
 {% load static %}
 
 <!-- Agregamos el titulo de la home -->
-{% block title %} Prestamo {% endblock %}
+{% block title %} Registrarse {% endblock %}
 
 
 <!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
 <section>
-    <h3>Registrar usuario</h3>
-    <form action="" method="POST">
+    <h3 class="texto">Registrar usuario</h3>
+    <form action="" method="POST" id="registrarse">
         {% csrf_token %}
         <div class="form-field" >
             {{  form.username.errors }}

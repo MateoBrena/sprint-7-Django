@@ -1,4 +1,3 @@
-
 <!-- agregamos el bloque extends que tomara el html base-->
 {% extends 'Inicio/base.html' %}
 
@@ -7,7 +6,7 @@
 {% load static %}
 
 <!-- Agregamos el titulo de la home -->
-{% block title %} Inicio {% endblock %}
+{% block title %} Perfil {% endblock %}
 
 
 <!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
@@ -20,18 +19,19 @@
             <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
             <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
             <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
+            <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
         </ul>
     </nav>
     <h3 class="texto"> Detalle de cliente {{cliente.id}} </h1>
-    <div id="detalle">
-            <div class="container">
+        <div id="detalle">
+            <div class="container p-2 bg-secondary text-white">
                 <p><strong>Nombre y apellido:</strong> {{ cliente }} </p>
                 <p><strong>DNI:</strong> {{ cliente.dni }} </p>
                 <p><strong>Fecha de nacimiento:</strong> {{ cliente.dob }} </p>
                 <p><strong>Tipo de cliente:</strong> {{cliente.tipo}} </p>
                 <p><strong>Sucursal:</strong> {{ cliente.branch }}</p>
             </div>
-    </div>
+        </div>
 </section>
 
 {% endblock %}

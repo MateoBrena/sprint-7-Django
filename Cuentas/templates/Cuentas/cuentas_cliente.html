@@ -18,9 +18,11 @@
             <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
             <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
             <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
+            <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
         </ul>
     </nav>
     <h3 class="texto"> Cuentas del cliente {{ cliente }}</h3>
+    {% if cuentas|length > 0 %}
     <div class="container-lg m-3" id="contenedor-cuentas">
         {% for cuenta in cuentas %}
         <div class="container p-2 bg-secondary text-white" id="cada-cuenta">
@@ -31,6 +33,9 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+        <h4 class="texto">El cliente no posee ninguna cuenta</h4>
+    {% endif %}
 </section>
 
 {% endblock %}

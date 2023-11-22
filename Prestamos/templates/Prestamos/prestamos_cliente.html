@@ -1,12 +1,13 @@
-
 <!-- agregamos el bloque extends que tomara el html base-->
 {% extends 'Inicio/base.html' %}
 
 <!-- Agregamos el contenido estatico-->
+
 {% load static %}
 
 <!-- Agregamos el titulo de la home -->
-{% block title %} Tarjetas {% endblock %}
+{% block title %} Mis Prestamos {% endblock %}
+
 
 <!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
@@ -18,24 +19,20 @@
             <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
             <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
             <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
-            <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
+            <li><a href="{% url 'prestamos_cliente' cliente.id %}"> Mis préstamos </a></li>
         </ul>
     </nav>
-    <h3 class="texto"> Tarjetas del cliente {{ cliente }}</h3>
-    {% if tarjetas|length > 0 %}
-    <div class="container-lg m-3" id="contenedor-cuentas">
-        {% for tarjeta in tarjetas %}
-        <div class="container p-2 bg-secondary text-white" id="cada-cuenta">
-            <h4>{{ tarjeta }}</h4>
-            <p>{{ tarjeta.numero }}</p>
-            <p>Tipo: {{ tarjeta.tipo }}</p>
-            <p>Vencimiento: {{ tarjeta.fecha_expiracion }}</p>
-            <a href="#" class="btn btn-primary">Ver detalle</a>
-        </div>
+    <h3 class="texto"> Préstamos del cliente {{ cliente }}</h3>
+    {% if prestamos|length > 0 %}
+        <div class="container-lg m-3" id="contenedor-cuentas">
+        {% for prestamo in prestamos %}
+            <div class="container p-2 bg-secondary text-white" id="cada-cuenta">
+                <strong><p>{{ prestamo }}</p></strong>
+            </div>
         {% endfor %}
-    </div>
+        </div>
     {% else %}
-        <h4 class="texto">El cliente no posee ninguna tarjeta</h4>
+        <h4 class="texto">El cliente no tiene préstamos aprobados </h4>
     {% endif %}
 </section>
 

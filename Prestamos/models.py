@@ -1,5 +1,4 @@
 from django.db import models
-from datetime import date
 from Clientes.models import Cliente
 
 # Create your models here.
@@ -8,3 +7,6 @@ class Prestamo(models.Model):
     fecha = models.DateField()
     monto = models.IntegerField()
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.tipo + ". Monto: $" + str(self.monto)

@@ -4,7 +4,7 @@ from django import forms
 from .models import Cliente
 
 class createUserForm(UserCreationForm):
-    class meta:
+    class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
 

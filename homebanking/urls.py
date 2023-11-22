@@ -34,6 +34,7 @@ urlpatterns = [
     path('tarjetas/<int:id_cliente>/', vista2.por_cliente, name="tarjetas_cliente"),
     path('sucursales/', vista4.listado, name="sucursales"),
     path('prestamos/<int:cliente_id>/', vista5.prestamo, name="prestamo"),
+    path('misprestamos/<int:cliente_id>/', vista5.por_cliente, name="prestamos_cliente"),
     path('accounts/',include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]

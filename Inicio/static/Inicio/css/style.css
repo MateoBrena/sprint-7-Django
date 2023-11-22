@@ -97,11 +97,14 @@ footer {
 
 .texto {
     margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .menu-navbar {
     display: inline-flex;
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 .menu-navbar ul li {
@@ -130,6 +133,11 @@ footer {
     border: solid 1px black;
     width: 80%;
     margin-left: 3rem;
+}
+
+#registrarse {
+    margin-left: 3rem;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
