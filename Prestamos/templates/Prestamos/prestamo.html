@@ -33,18 +33,18 @@
                         {% if message.level_tag == "error" %}
                             <div class=" container p-2 text-white bg-danger"><strong>{{ message }}</strong></div>
                         {% else %}
-                        <div class=" container p-2 text-white bg-success"><strong>{{ message }}</strong></div>
+                            <div class=" container p-2 text-white bg-{{message.level_tag}}"><strong>{{ message }}</strong></div>
                         {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}
                 {{ form.as_p }}
                 {% if cliente.tipo_id == 1 %}
-                    <p>Monto máximo permitido para clientes Classic: $100000</p>
+                    <p>Monto máximo de pre-aprobación para clientes Classic: $100000</p>
                 {% elif cliente.tipo_id == 2 %}
-                    <p>Monto máximo permitido para clientes Gold: $300000</p>
+                    <p>Monto máximo pre-aprobación para clientes Gold: $300000</p>
                 {% else %}
-                    <p>Monto máximo permitido para clientes Black: $500000</p>
+                    <p>Monto máximo pre-aprobación para clientes Black: $500000</p>
                 {% endif %}
                 <input class="btn btn-success btn-block" type="submit" value="Solicitar Prestamo">
             </form>

@@ -6,6 +6,7 @@ class Prestamo(models.Model):
     tipo = models.CharField(max_length=30)
     fecha = models.DateField()
     monto = models.IntegerField()
+    estado = models.CharField(max_length=30)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
     def __str__(self):

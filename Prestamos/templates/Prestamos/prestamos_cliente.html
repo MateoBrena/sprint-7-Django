@@ -28,11 +28,12 @@
         {% for prestamo in prestamos %}
             <div class="container p-2 bg-secondary text-white" id="cada-cuenta">
                 <strong><p>{{ prestamo }}</p></strong>
+                <strong><p>{{ prestamo.estado }}</p></strong>
             </div>
         {% endfor %}
         </div>
     {% else %}
-        <h4 class="texto">El cliente no tiene préstamos aprobados </h4>
+        <h4 class="texto">El cliente no tiene préstamos solicitados </h4>
     {% endif %}
 </section>
 
