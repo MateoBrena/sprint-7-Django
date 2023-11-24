@@ -68,7 +68,7 @@ def prestamo(request, cliente_id):
                             prestamo.save()
                             messages.warning(request, 'Préstamo solicitado correctamente pero pendiente de aprobación, solo en caso de ser aprobado el saldo será depositado') 
                 else:
-                    messages.error(request,"Error: la fecha seleccionada debe ser posterior a "+ str(datetime.strftime(date.today(),'%d/%m/%Y')))
+                    messages.error(request,"Error: la fecha de inicio del préstamo debe ser posterior a "+ str(datetime.strftime(date.today(),'%d/%m/%Y')))
             else:
                  messages.error(request, "Error: el cliente debe poseer una caja de ahorro en pesos para solicitar un préstamo")
 
