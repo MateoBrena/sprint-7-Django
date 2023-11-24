@@ -14,9 +14,13 @@
 
 <section>
     <h3 class="texto"> Listado de cuentas </h1>
-    <div>
+    <div class="container">
         {% for cuenta in cuentas %}
-            <p> {{ cuenta }} </p>
+            <div class="divisor">
+                <p> {{ cuenta }} </p>
+                <p> {{ cuenta.iban }} </p>
+                <p> {{ cuenta.cliente }} </p>
+            </div>
         {% endfor %}
     </div>
 </section>

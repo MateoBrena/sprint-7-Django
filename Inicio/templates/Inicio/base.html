@@ -33,7 +33,7 @@
                 <li class="boton-index"><a href="{% url 'login' %}" class="dropdown-item boton-index">Home Banking</a></li>
                 <li class="boton-index"><a href="{% url 'register' %}" class="dropdown-item boton-index">Registrate</a></li>
               {% else %}
-              <li class="boton-index"><a href="#" class="dropdown-item boton-index">Bienvenido {{ request.user }}</a></li>
+              <li class="boton-index"><a href="{% url 'cuentas_cliente' cliente.id %}" class="dropdown-item boton-index">Bienvenido {{ request.user }}</a></li>
               <li class="boton-index"><a href="{% url 'logout' %}" class="dropdown-item boton-index">Cerrar Sesión</a></li>
               {% endif %}
             </ul>

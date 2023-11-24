@@ -14,11 +14,11 @@
 {% block content %}
 
 <section>
-    <h3 class="texto"> Listado de clientes <i class="fa fa-bars"></i></h1>
-    <div>
+    <h3 class="texto"> Listado de clientes </h1>
+    <div class="container">
         {% for cliente in clientes %}
-            <div class="container">
-                <a href="{% url 'cliente_detail' cliente.id %}"> {{ cliente }} </a>
+            <div>
+                <p><strong> {{ cliente }} </strong></p>
                 <p> {{cliente.tipo}} </p>
             </div>
         {% endfor %}

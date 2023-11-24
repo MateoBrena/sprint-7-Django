@@ -140,6 +140,18 @@ footer {
     margin-top: 1rem;
 }
 
+.divisor {
+    border: 1px solid black;
+    text-align: center;
+    padding: 2rem;
+}
+
+.candado {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 768px) {
 
     .valores {

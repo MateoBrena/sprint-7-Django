@@ -16,5 +16,9 @@ def listado(request):
 def por_cliente(request, id_cliente):
         cliente = Cliente.objects.get(pk=id_cliente)
         tarjetas = Tarjeta.objects.filter(cliente_id__exact = id_cliente)
-        return render(request, "Tarjetas/tarjetas_cliente.html", {"tarjetas":tarjetas,
+        if cliente.usuario_id == request.user.id:
+                return render(request, "Tarjetas/tarjetas_cliente.html", {"tarjetas":tarjetas,
                                                                 "cliente": cliente})
+        else:
+                return render(request, "Clientes/error.html", {"tarjetas":""})
+                

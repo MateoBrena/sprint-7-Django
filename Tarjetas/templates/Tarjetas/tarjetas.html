@@ -11,10 +11,10 @@
 <!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
 <section>
-    <h3> Listado de Tarjetas </h1>
-    <div>
+    <h3 class="texto"> Listado de Tarjetas </h3>
+    <div class=" container">
         {% for tarjeta in tarjetas %}
-            <div>
+            <div class="divisor">
                 <p> {{ tarjeta.numero}}</p>
                 <p> {{ tarjeta.tipo}} </p>
                 <p> {{ tarjeta.marca }} </p>
